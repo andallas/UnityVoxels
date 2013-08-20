@@ -10,7 +10,7 @@ public class VoxelMesh
 	List<Vector3> Verts;
 	List<int> Tris;
 	List<Vector2> UVs;
-	float size = 0.5f;
+	float size = 1.0f;
 	public GameObject gameObject;
 
 	public VoxelMesh(Vector3 pos, byte type)
@@ -18,15 +18,15 @@ public class VoxelMesh
 		gameObject = new GameObject();
 		gameObject.transform.position = pos;
 		Points = new List<Vector3>();
-		Points.Add(new Vector3(-size, size,-size));
-		Points.Add(new Vector3( size, size,-size));
-		Points.Add(new Vector3( size,-size,-size));
-		Points.Add(new Vector3(-size,-size,-size));
+		Points.Add(new Vector3( 0.0f, size, 0.0f));
+		Points.Add(new Vector3( size, size, 0.0f));
+		Points.Add(new Vector3( size, 0.0f, 0.0f));
+		Points.Add(new Vector3( 0.0f, 0.0f, 0.0f));
 
 		Points.Add(new Vector3( size, size, size));
-		Points.Add(new Vector3(-size, size, size));
-		Points.Add(new Vector3(-size,-size, size));
-		Points.Add(new Vector3( size,-size, size));
+		Points.Add(new Vector3( 0.0f, size, size));
+		Points.Add(new Vector3( 0.0f, 0.0f, size));
+		Points.Add(new Vector3( size, 0.0f, size));
 
 		Verts = new List<Vector3>();
 		Tris = new List<int>();
